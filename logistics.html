@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>Transportation & Logistics</title>
+		<style>
+			div.content{
+				background-color: white;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				opacity: 0.6;
+				color: black;
+				font-size: 14px;
+				padding: 15px;
+			}
+			img{
+				margin-left: auto;
+				margin-right: auto;
+			}
+			ul{
+				width:50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			h1{
+				text-align: center;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+			span.ul{
+				text-decoration: underline;
+			}
+			select, option
+			{
+				font-size: 14px;
+			}
+			ul.topbar{
+				list-style: none;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			ul.topbar > li{
+				display: inline;
+				width: 400px;
+				padding: 15px;
+				border: solid 1px black;
+				border-radius: 10px;
+			}
+			ul.topbar > li:hover{
+				background-color: cyan;
+			}
+			ul.questions {
+				list-style:none;
+			}
+			div.content > div, div#adjusted{
+				width: 75%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align:center;
+			}
+		</style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var single = "<p>A single 1 way pick up and drop off.</p><p>The price varies based on the distance travelled.</p><p>Example:<ul style='list-style:none;'><li>Southside to Oakland: $10.</li><li>Southside to Shadyside: $15.</li><li>Southside to Mount Washington: $20.</li><li>Southside to Southhills $50.</li></ul></p>";
+				var date = "<p>Your chauffer for the evening.  Formally dressed chauffer, proper and curteous.  I will be with you for the length of your evening.  I will sit in the parking lot while you have your date, as a chauffer does.  I beckon to your requests as long as it follows the law of course.</p><p>This evening can end with a casual cruise through the city, or up to the top of mount washington.</p>";
+				var datebottle = date +"<p>Also includes bottles of champagne.  Nothing says a nice end of an evening with a slow cruise around Pittsburgh drinking champagne or another wine of your choice.</p>";
+				var sec = "<p>Security operations are the ultimate in protection for you and your event.  This event will also incorporate a convoy on an as needed basis.</p><p>You will have an armed body guard (or multiple) to protect and serve as your quick reactionary force if the need arises.  After initial confrontations and incapitation, police will be called.  Naturally violence, is frowned upon and we will try to defuse the situation.</p><p>Objectives are given to us, as well as a priority list and we will handle everything else autonomously.</p>";
+				var obj={};
+				obj.single = single;
+				obj.date = date;
+				obj.datebottle = datebottle;
+				obj.sec = sec;
+				$("select").on("change",{obj:obj}, function(e){
+					$("div#adjusted").html(""+e.data.obj[$(this).val()]);
+				});
+				$("select").change();
+			});
+		</script>
+	</head>
+	<body style="background-image: url('exterior.jpg'); background-repeat:no-repeat; background-size: 100%;">
+		<div class="content">
+		<div>
+			<h1>Transportation, Security, & Logistics</h1>
+		</div><!--
+		<div>
+			<ul class='topbar'><li>Bio</li><li>Car</li></ul>
+		</div>-->
+		<div>
+			<ul class='questions'>
+				<li>Are you planning a romantic date on the town?</li>
+				<li>Are you needing a ride home after a night of drinking?</li>
+				<li>Do you need a little extra security at a private event?</li>
+			</ul>
+			If you answered yes to any of those questions, I am the man for you.  I have been doing transportation for over 3 years, in southside or crossing states.
+		</div><br />
+		<div>
+			Private excursions and romantic evenings have an <span class="ul">optional bottle service.</span>
+		</div><br />
+		<div>
+			Why would you want to risk a DUI, expensive parking, or taking your eyes off of your beloved?  I can do my job and watch the road while you enjoy each others company.
+		</div>
+		<div>
+			For transportation, I use the best money can buy, a Black 2013 Dodge Charger R/T Plus.  Black, comfortable, spacious luxury leather seats.
+		</div>
+		<center>
+		<div>
+			<img src="interior.jpg" />
+		</div>
+		<div>
+			Pricing:
+			<select>
+				<option value="single">1-Way (Varies based on distance)</option>
+				<option value="date">Date Night ($150 for the evening)</option>
+				<option value="datebottle">Date Night w/ Bottle Service ($150 + $70 per bottle)</option>
+				<!--<option value="sec">Security ($500 per event)</option>-->
+			</select>
+			<div id="adjusted"></div>
+		</div>
+		<div>
+			For Reservations contact Will:<br />
+			<a href="tel:xxxxxxxxxx">Phone Number(XXX-XXX-XXXX)</a><br />
+			<a href="email:wllm.francis@gmail.com">Email</a>
+		</div>
+		</center>
+		</div>
+	</body>
+</html>
